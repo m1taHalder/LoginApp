@@ -49,6 +49,9 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:18.2.0'
     implementation 'com.google.android.gms:play-services-location:21.2.0'
     implementation "com.google.android.gms:play-services-wallet:19.3.0"
-    implementation 'com.google.android.play:core:1.10.3'
     implementation 'com.google.android.play:core-ktx:1.8.1'
+
+    implementation "androidx.media3:media3-exoplayer:1.4.1"
+    implementation "androidx.media3:media3-ui:1.4.1"
+    implementation "androidx.viewpager2:viewpager2:1.1.0"
 }
