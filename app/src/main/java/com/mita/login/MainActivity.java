@@ -35,6 +35,15 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         //  setContentView(R.layout.activity_main);
         init();
+
+        binding.goToReelsFragment.setOnClickListener(view -> {
+            if (savedInstanceState == null) {
+                ReelsFragment fragment = new ReelsFragment();
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.container, fragment)
+                        .commit();
+            }
+        });
     }
 
     public void init() {
@@ -78,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         SignInCredential credential = Identity.getSignInClient(this).getSignInCredentialFromIntent(data);
                         String idToken = credential.getGoogleIdToken();
-                        if (idToken!=null) {
+                        if (idToken != null) {
                             String email = credential.getId();
                             Toast.makeText(this, "Email: " + email, Toast.LENGTH_LONG).show();
                         }
